@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: lightgreen;
+}
+
+.sky{
+    width: 100%;
+    height: 250px;
+    background-color: lightblue;
+}
+.sky::before{
+    display: block;
+    content: "";
+    background-image: url(../images/cloud.png);
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 400px;
+}
+ 
+.link{
+    display: block;
+    width: 250px;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 5px;
+    background-color:  #80b918;
+    margin-top: 190px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-style: 25px;
+    color: black;
+    transition: opacity 0.5s ease;
+    
+}
+.link:active{
+    opacity: 0.5;
+}
+.road{
+    position: relative;
+    width: 100%;
+    height:300px;
+    background-color:gray;
+    border-top: 10px solid  darkgrey;
+    border-bottom: 10px solid  darkgrey;
+}
+
+
+.road::after{
+    width: 1680px;
+    height: 0px;
+    border: 5px dashed white;
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform 5s ease;
+    position: absolute;
+    bottom: 150px;
+}
+.road::before {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/mario.png);
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform 2s ease;
+}
+.link:active + .road::before {
+    transform: translateX(1600px);
+}
